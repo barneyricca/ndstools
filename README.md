@@ -1,5 +1,6 @@
 # NDSToolkit
 
+(For now, this README is being used as a file to help me keep track of things. I'll clean it up at the end.)
 The NDSToolkit is an R package containing a number of functions for nonlinear dynamical systems analyses. Specifically, this package contains or will contain the following functions:
 
 ## Functions Completed
@@ -36,10 +37,11 @@ The NDSToolkit is an R package containing a number of functions for nonlinear dy
 This package also contains a number of datasets
 
 - Sample categorical sequence from Guastello (2011)
+- A sample of data from RIcca & Jordan
 
 Note to self: devtools::document() to create help pages from R file.
 
-Need tutorials or examples
+Need vignettes
 
 Other things that may deserve a wrapper or a C++ update here:
 
