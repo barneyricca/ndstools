@@ -38,12 +38,13 @@ This package also contains a number of datasets
 
 - Sample categorical sequence from Guastello (2011)
 - A sample of data from RIcca & Jordan
+- Some other time series, etc.
 
 Note to self: devtools::document() to create help pages from R file.
 
 Need vignettes
 
-Other things that may deserve a wrapper or a C++ update here:
+Other things that may deserve a wrapper or a C++ update (for speed) here:
 
 TDA
 DTW

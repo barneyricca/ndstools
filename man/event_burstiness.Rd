@@ -17,6 +17,9 @@ each of the unique codes in a categorical time series. The series is
 considered to be event-based (i.e., the points are ordered in time but the
 intervals between points may not be constant). See time_burstiness() to find
 the burstiness of codes in a time-series.
+
+There is a known problem with a non-NULL minimum inter-event time. That
+needs to be corrected.
 }
 \details{
 event_burstiness() returns a named vector with a burstiness number for

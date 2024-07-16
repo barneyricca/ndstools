@@ -1,23 +1,26 @@
 #' time_burstiness
 #'
-#' @param <times>  vector
+#' @param <times> numeric vector
 #' @param <min_iet> minimum interevent sequence spacing
 #' @keywords burstiness
-#' @description time_burstiness() estimates the burstiness coefficient for
+#' @description time_burstiness() estimates the burstiness coefficient for a
+#' sequence continaing the series of times at which an event occurs.
 #'
-#' See event_burstiness() to find
-#' the burstiness of codes in a time-series.
+#' See event_burstiness() to find the burstiness of categorical time-series.
 #'
 #' There is a known problem with a non-NULL minimum inter-event time. That
 #' needs to be corrected.
 #' @export
 #' @details
-#' time_burstiness() returns the burstiness number for a
-#' data sequence.
+#' time_burstiness() returns the burstiness number for a sequence of event
+#' times (e.g., the successive times at which an event occurs).
 #'
 #' Standard errors for the resulting burstiness coefficients can be
 #' obtained using block resampling (e.g., via boot::tsboot() with the
 #' parameter sim = "fixed").
+#'
+#' There may sitll be a bug in the non-NULL minimum inter-event times
+#' parameter.
 #' @author Barney Ricca barneyricca@gmail.com
 #' @references Kim, E.-K., & Jo, H.-H. (2016). Measuring burstiness for finite
 #' event sequences. Physical Review E, 94(3), 032311.
