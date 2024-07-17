@@ -1,12 +1,12 @@
 Package: ndstools
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Nonlinear Dynamical Systems Data Analysis Tools
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Barney Ricca
+Maintainer: Barney Ricca <barneyricca@gmail.com>
+Description: This package provides a number of routines for nonlinear dynamical systems (NDS) data analysis. Where possible, these routines include sensible defaults and are intended to run quickly and to be useable by those with only cursory backgrounds in NDS.
+    Many other packages exist that implement NDS data analysis routines; where appropriate packages exist, the README file in the repository has notes about many of the other packages; those functions are not reproduced here.
+License: MIT License
 Encoding: UTF-8
 LazyData: true
 Imports: Rcpp (>= 1.0.12)
