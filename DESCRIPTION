@@ -1,0 +1,22 @@
+Package: ndstools
+Type: Package
+Title: A Collection of Useful Tools for Nonlinear Time Series Analyses
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Barney", "Ricca",
+      email = "barneyricca@gmail.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: This package contains a number of tools for nonlinear time series
+    (NLTS) analyses. Some of these tools are available elsewhere, but were
+    ported to Rcpp here for speed. Some of these tools are modifications and
+    encapsulations of code that can be found in Huffaker, Bitelli, and Rosa 
+    (2017). Some of these tools are new.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp (>= 1.0.14)
+LinkingTo: Rcpp
+RoxygenNote: 7.3.2
