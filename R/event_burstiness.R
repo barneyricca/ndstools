@@ -80,7 +80,7 @@ event_burstiness <- function(ts,                 # vector of code sequence
         gaps_vec
       mean(gaps_vec, na.rm = TRUE) ->    # mean(interevent times)
         mean_iet
-      sd(gaps_vec, na.rm = TRUE) ->      # sd(interevent times)
+      stats::sd(gaps_vec, na.rm = TRUE) -> # sd(interevent times)
         sd_iet
       sd_iet / mean_iet ->               # Coefficient of variation
         r
@@ -107,7 +107,7 @@ event_burstiness <- function(ts,                 # vector of code sequence
             gaps_vec
           mean(gaps_vec, na.rm = TRUE) ->    # mean(interevent times)
             mean_iet
-          sd(gaps_vec, na.rm = TRUE) ->      # sd(interevent times)
+          stats::sd(gaps_vec, na.rm = TRUE) -> # sd(interevent times)
             sd_iet
           sd_iet / mean_iet ->               # Coefficient of variation
             r

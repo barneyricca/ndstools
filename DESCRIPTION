@@ -22,6 +22,7 @@ Imports:
     doremi,
     dplyr,
     energy,
+    FNN,
     ggplot2,
     lme4,
     magrittr,

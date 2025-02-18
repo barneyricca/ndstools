@@ -51,7 +51,7 @@ time_burstiness <- function (times,
   if (is.null(min_iet) == TRUE) {
     iet_vec <- diff(times, 1)
     mean_iet <- mean(iet_vec, na.rm = TRUE)
-    sd_iet <- sd(iet_vec, na.rm = TRUE)
+    sd_iet <- stats::sd(iet_vec, na.rm = TRUE)
     r <- sd_iet/mean_iet
     n <- length(iet_vec)
     B <- (r * sqrt(n + 1) - sqrt(n - 1)) /
@@ -66,7 +66,7 @@ time_burstiness <- function (times,
 
        iet_vec <- diff(times, 1)
        mean_iet <- mean(iet_vec, na.rm = TRUE)
-       sd_iet <- sd(iet_vec, na.rm = TRUE)
+       sd_iet <- stats::sd(iet_vec, na.rm = TRUE)
        r <- sd_iet/mean_iet
        n <- length(iet_vec)
        B <- ((n - 2) *

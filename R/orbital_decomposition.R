@@ -112,7 +112,7 @@ orbde <- function(data_seq) {
   sum(freqs * log(freqs / F_exp)) * 2 ->
     chi_sq
 
-  dchisq(chi_sq, dof) -> p
+  stats::dchisq(chi_sq, dof) -> p
   chi_sq / N_star -> phi_sq
 
   data.frame("C" = 1,
@@ -207,7 +207,7 @@ orbde <- function(data_seq) {
       }
 
       # Now for p-value and phi-squared (Guastello eq 21.7):
-      dchisq(chi_sq, dof) -> p
+      stats::dchisq(chi_sq, dof) -> p
       chi_sq / N_star -> phi_sq
 
       if(!is.na(trMC)) {

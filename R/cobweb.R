@@ -57,10 +57,10 @@ cobweb <- function(x,
   xp1r[-length(xp1r)] ->
     xp1r
 
-  par() ->
+  graphics::par() ->
     par_keep
-  par(pty = 's',
-      mai = c(0.80, 0.05, 0.35, 0.05))
+  graphics::par(pty = 's',
+                mai = c(0.80, 0.05, 0.35, 0.05))
   {                                         # Plot
     plot(x, xp1,                            # The points
          pch = 16,
@@ -70,12 +70,12 @@ cobweb <- function(x,
          main = ifelse(is.null(title) == TRUE,
                        "",
                        title))
-    abline(0,1)                             # The diagonal
-    lines(xr,xp1r,                          # The cobweb
+    graphics::abline(0,1)                   # The diagonal
+    graphics::lines(xr,xp1r,                # The cobweb
           lwd = 0.4)
   }
   suppressWarnings(
-    par(par_keep))
+    graphics::par(par_keep))
   #return(NULL)                             # No return message if no
                                             #  return() command.
 

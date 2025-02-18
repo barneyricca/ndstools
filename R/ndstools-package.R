@@ -7,6 +7,7 @@
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
 #' @importFrom energy dcor
+#' @importFrom FNN mutinfo
 #' @importFrom ggplot2 aes
 #' @importFrom ggplot2 arrow
 #' @importFrom ggplot2 geom_path
