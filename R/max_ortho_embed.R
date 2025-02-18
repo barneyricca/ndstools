@@ -1,10 +1,11 @@
-#' pecora
+#' max_ortho_embed
 #'
-#' @param <ts1> character or numeric vector; time series to evaluate
+#' @param <ts> character or numeric vector; time series to evaluate
 #' @keywords embedding
 #' @description This function computes the delay state space embedding of a
-#' time series, based on the method proposed by Pecora (2008).
-#' @details #' Currently, this function works only with numerical data, NOT categorical.
+#' time series, based on the method proposed by Pecora et al. (2008).
+#' @details
+#' #' Currently, this function works only with numerical data.
 #' It returns
 #' @export
 #' @author Barney Ricca <barneyricca@gmail.com>
@@ -13,9 +14,9 @@
 #' 013110-1-013110–013119. https://doi.org/10.1063/1.2430294
 
 #' @examples
-#' pecora(xxxx)
+#' max_ortho_embed(Mayport)
 #'
-pecora <- function(ts1) {                   # Time series vector
+max_ortho_embed <- function(ts1) {                   # Time series vector
   #
   if(is.null(ts1) == TRUE) {
     cat("ts1 is NULL!/n")
@@ -51,8 +52,9 @@ pecora <- function(ts1) {                   # Time series vector
   #   dimension, or must we stop here? The way we do that is:
   #
 
-  # embed_ls[[1]] - number of dimensions
+  # embed_ls[[1]] - vector 1:N
   # embed_ls[[2]] - delay for each dimension
-  # embed_ls[[3:...]] - sequence for each dimension
+  # embed_ls[[3]] - data frame of coordinates, with dimensions (length(ts) - N
+  #                 + 1) by N, where N = number of dimensions
   return(embed_ls)
 }

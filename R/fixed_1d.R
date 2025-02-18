@@ -26,6 +26,15 @@ fixed_1d <- function(Level_data,            # Vector of level data
 
   # This function will use loess() to model a uni-dimensional time sequence,
   #  find the fixed points and their stability.
+  if(any(is.na(Level_data) == TRUE)) {
+    cat("Missing data in level data not allowed!\n")
+    return(NULL)
+  }
+
+  if(any(is.na(Velocity_data) == TRUE)) {
+    cat("Missing data in velocity data not allowed!\n")
+    return(NULL)
+  }
 
   loess(Velocity_data ~ Level_data,
         span = span,
