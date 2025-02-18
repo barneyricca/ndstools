@@ -18,7 +18,7 @@
 #' @seealso
 #'
 #' @examples
-#' 3.999999 -> R
+#' 3.99999 -> R
 #' vector(mode = "numeric", length = 500) -> x
 #' 0.7 -> x[1]
 #' for(i in 2:500) {R * x[i-1] * (1 - x[i-1]) -> x[i]}
