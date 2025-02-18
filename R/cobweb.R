@@ -13,9 +13,6 @@
 #'
 #' @author
 #' Barney Ricca barneyricca@gmail.com
-#' @references
-#'
-#' @seealso
 #'
 #' @examples
 #' 3.99999 -> R
