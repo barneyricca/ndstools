@@ -18,11 +18,13 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
+    data.table,
     deSolve,
     doremi,
     dplyr,
     energy,
     FNN,
+    glue,
     ggplot2,
     lme4,
     magrittr,
