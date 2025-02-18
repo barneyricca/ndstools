@@ -1,0 +1,115 @@
+── R CMD check results ───────────────────────────────────── ndstools 0.1.0 ────
+Duration: 48.5s
+
+❯ checking examples ... ERROR
+  Running examples in ‘ndstools-Ex.R’ failed
+  The error most likely occurred in:
+
+  > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+  > ### Name: burstiness
+  > ### Title: burstiness
+  > ### Aliases: burstiness
+  > ### Keywords: burstiness
+  >
+  > ### ** Examples
+  >
+  > burstiness(guastello)
+  Error: object 'guastello' not found
+  Execution halted
+
+❯ checking dependencies in R code ... WARNING
+  'library' or 'require' calls not declared from:
+    ‘data.table’ ‘glue’
+  'library' or 'require' calls in package code:
+    ‘data.table’ ‘glue’
+    Please use :: or requireNamespace() instead.
+    See section 'Suggested packages' in the 'Writing R Extensions' manual.
+  Namespace in Imports field not imported from: ‘Rcpp’
+    All declared Imports should be used.
+
+❯ checking Rd \usage sections ... WARNING
+  Undocumented arguments in Rd file 'burstiness.Rd'
+    ‘ts’ ‘min_iet’
+  Documented arguments not in \usage in Rd file 'burstiness.Rd':
+    ‘<ts>’ ‘<min_iet>’
+
+  Undocumented arguments in Rd file 'event_burstiness.Rd'
+    ‘ts’ ‘min_iet’
+  Documented arguments not in \usage in Rd file 'event_burstiness.Rd':
+    ‘<ts>’ ‘<min_iet>’
+
+  Undocumented arguments in Rd file 'gradient_field.Rd'
+    ‘xvar’ ‘yvar’ ‘gam_form’ ‘inter’ ‘xdot’ ‘ydot’ ‘spar’ ‘grid_size’
+    ‘display_grid_size’
+  Documented arguments not in \usage in Rd file 'gradient_field.Rd':
+    ‘data_df’ ‘arrow_size’
+
+  Documented arguments not in \usage in Rd file 'mlmCusp.Rd':
+    ‘<df>’ ‘<column_names>’
+
+  Undocumented arguments in Rd file 'orbde.Rd'
+    ‘data_seq’
+  Documented arguments not in \usage in Rd file 'orbde.Rd':
+    ‘<data_seq>’
+
+  Undocumented arguments in Rd file 'pecora.Rd'
+    ‘ts1’
+  Documented arguments not in \usage in Rd file 'pecora.Rd':
+    ‘<ts1>’
+
+  Undocumented arguments in Rd file 'time_burstiness.Rd'
+    ‘times’ ‘min_time’ ‘min_iet’
+  Documented arguments not in \usage in Rd file 'time_burstiness.Rd':
+    ‘<times>’ ‘<min_time>’ ‘<min_iet>’
+
+  Documented arguments not in \usage in Rd file 'vf_plot.Rd':
+    ‘data_df’
+
+  Functions with \usage entries need to have the appropriate \alias
+  entries, and all their arguments documented.
+  The \usage entries must correspond to syntactically valid R code.
+  See chapter ‘Writing R documentation files’ in the ‘Writing R
+  Extensions’ manual.
+
+❯ checking contents of ‘data’ directory ... WARNING
+  Output for data("engineering", package = "ndstools"):
+    No dataset created in 'envir'
+  Output for data("guastello", package = "ndstools"):
+    No dataset created in 'envir'
+
+❯ checking top-level files ... NOTE
+  Non-standard file/directory found at top level:
+    ‘Data’
+
+❯ checking R code for possible problems ... NOTE
+  burstiness: no visible global function definition for ‘sd’
+  event_burstiness: no visible global function definition for ‘sd’
+  gradient_field: no visible binding for global variable ‘index’
+  gradient_field: no visible binding for global variable ‘temp_df’
+  gradient_field: no visible binding for global variable ‘CSE0f’
+  gradient_field: no visible binding for global variable ‘PTSS0f’
+  gradient_field: no visible binding for global variable ‘Var1’
+  gradient_field: no visible binding for global variable ‘Var2’
+  gradient_field: no visible binding for global variable
+    ‘cse1_model_inter_ls’
+  gradient_field: no visible binding for global variable ‘C0’
+  gradient_field: no visible binding for global variable ‘C1’
+  gradient_field: no visible binding for global variable ‘P0’
+  gradient_field: no visible binding for global variable ‘P1’
+  gradient_field: no visible binding for global variable ‘ids’
+  orbde: no visible global function definition for ‘glue_collapse’
+  orbde: no visible global function definition for ‘shift’
+  orbde: no visible global function definition for ‘dchisq’
+  pecora: no visible binding for global variable ‘embed_ls’
+  rcpp_hello: no visible binding for global variable
+    ‘_ndstools_rcpp_hello’
+  time_burstiness: no visible global function definition for ‘sd’
+  Undefined global functions or variables:
+    C0 C1 CSE0f P0 P1 PTSS0f Var1 Var2 _ndstools_rcpp_hello
+    cse1_model_inter_ls dchisq embed_ls glue_collapse ids index sd shift
+    temp_df
+  Consider adding
+    importFrom("stats", "dchisq", "sd")
+  to your NAMESPACE file.
+
+1 error ✖ | 3 warnings ✖ | 2 notes ✖
