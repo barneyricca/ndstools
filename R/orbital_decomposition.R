@@ -38,9 +38,6 @@ orbde <- function(data_seq) {
   #
   # 52 codes should be sufficient for any application; it is the limit on the
   #  ORBDE software as well.
-  require(data.table)  # Necessary to allow parallelizing to work
-  # data.table::shift() is used here.
-  require(glue)
 
   # First, recast everything into single character codes:
   unique(data_seq) -> uni_seq
@@ -68,12 +65,12 @@ orbde <- function(data_seq) {
   # May want this for the previous line:
   # table(data_seq, useNA = "always") -> freqs
 
-  glue_collapse(data_seq) -> coll_seq
+  glue::glue_collapse(data_seq) -> coll_seq
   # Begin processing data: For C = 1
   1 -> C
   length(data_seq) -> seq_len -> N_star
 
-  shift(data_seq, 1) -> shifted_seq
+  data.table::shift(data_seq, 1) -> shifted_seq
   length(which(data_seq == shifted_seq)) -> recurs
 
   if(recurs > 0) {
