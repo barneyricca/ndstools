@@ -5,7 +5,11 @@
 \alias{engineering}
 \title{engineering}
 \format{
-An object of class \code{character} of length 421.
+## `engineering`
+A character string with with 421 entries.
+}
+\source{
+<https://github.com/barneyricca/temporal-small-groups>
 }
 \usage{
 engineering

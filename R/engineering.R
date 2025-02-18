@@ -6,7 +6,11 @@
 #' on an engineering design project; these data are part of the data that were
 #' used in Ricca et al. (2020) and Ricca and Jordan (2022). The codes are based
 #' on the coding scheme of Fiore et al. (2010).
-#' @export
+#' @format  ## `engineering`
+#' A character string with with 421 entries.
+#'
+#' @source <https://github.com/barneyricca/temporal-small-groups>
+#'
 #' @author Barney Ricca barneyricca@gmail.com
 #' @references Fiore, S. M., Rosen, M. A., Smith-Jentsch, K. A., Salas, E.,
 #' Letsky, M., & Warner, N. (2010). Toward an understanding of macrocognition

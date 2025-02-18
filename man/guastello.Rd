@@ -5,7 +5,10 @@
 \alias{guastello}
 \title{guastello}
 \format{
-An object of class \code{character} of length 20.
+a character vector of 20 entries
+}
+\source{
+<https://www.routledge.com/Nonlinear-Dynamical-Systems-Analysis-for-the-Behavioral-Sciences-Using-Real-Data/Guastello-Gregson/p/book/9781439819975?srsltid=AfmBOooMo5hYC4OG-x8bUNkPVhBbLo-IyQJ-XCyF-5YG8HDlxT238AvN>
 }
 \usage{
 guastello
