@@ -20,18 +20,6 @@
 #' @examples
 #' nse(mayport)
 #'
-#
-#
-#
-# FOR TESTING
-# Mx is the embedded Hare data (delay = 3, dim = 2)
-read.csv(here("Mx.csv")) -> Mx
-Mx -> ts
-0.5 -> frac.learn
-#
-#
-#
-#
 
 nse <- function(ts,
                 frac.learn = 0.5) { # fraction in learning set
