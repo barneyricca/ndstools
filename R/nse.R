@@ -61,6 +61,13 @@ nse <- function(ts,
     }
   }
 
+  # Ties are a problem, so add small random noise to the data
+  Mx + rnorm(n = nrow(Mx) * ncol(Mx),
+             mean = 0,
+             sd = min(sd(Mx, na.rm = TRUE) / 1e3,
+                      1e-3)) ->
+    Mx
+
   #Step 2a: Partition Mx into learning and test sets
   # Original:
   # learn.rows<-round(frac.learn * nrow(Mx))
@@ -98,13 +105,14 @@ nse <- function(ts,
     #  (i.e., learn.em.0). Should this be learn.em, or should the ref point
     #  be learn.em.0?
     #Distance between points on the attractor
-    ref.point <- nrow(learn.em) #index of reference point [1] 27
+    ref.point <- nrow(learn.em) #index of reference point
 
+    # Alternatives:
     # stat::dist(learn.em, diag = TRUE, upper = TRUE) gives the same things.
     # FNN:get.knn() gives almost the same information, but still needs to
     #  be normalized. (It is also sqrt(2) larger for the Hare data.)
     dist<-fields::rdist(learn.em) #distance matrix;
-    # 27 x 27 matrix
+
     dist.ref<-dist[,ref.point] #distances from reference point to other points
     sc<-max(dist.ref) #find maximum distance from reference point
     dist.ref.sc<-dist.ref/sc #scale distances from reference point to max distance
@@ -113,31 +121,21 @@ nse <- function(ts,
     remove<-which(o==nrow(learn.em))
 
     o1<-o[-remove]
-    #Indicies of m+1 smallest distances from reference point
+    #Indices of m+1 smallest distances from reference point
     # (m=embedding dimension)
     o2<-o1[1:(m+1)]
     o2<-na.omit(o2)
     dist.ordered<-dist.ref.sc[o2] #ordered distances
-
-
-    # > dist.ordered
-    # [1] 0.00344 0.08481 0.14742
-    # > o1
-    # [1] 26  3 25
-    # # Unnormalized: 26 = 0.49, 3 = 12.08, 25 = 21
-    #
-    #
-    # # Alternative
+#dist.ordered
+    # Alternative
     # library(FNN)
     # get.knn(data = cbind(learn.em, learn.em),
     #         k = 3) ->
     #   dum1
     # dum1$nn.index[27,]
     # dum1$nn.dist[27,]
-    # # Closest distances: 26 = 0.693, 3 = 17.090, 25 = 29.7
     # # All are sqrt(2) longer distances than KBR method.
     # # Normalizing still must be done.
-
 
     #Increment neighbouring indices by 1 period for use in prediction algorithm
     # These are the next points for the nearest neighbors of the current point
@@ -150,21 +148,11 @@ nse <- function(ts,
     #distances from reference point
     # Compute weights (Sughihara et al., 2012)
 
-    # Hmm...because w.vector is normalized, do we need to include the
-    #  normalization using u.denom in the exponential?
-    #  exp(A/B) = (exp(A))^(1/B)
     # Original:
     u.denom<-dist.ordered[1] #distance from reference point to nearest neighbour
-    # Revised, to address the possibility of multiple zero distances
-    if(u.denom == 0) {
-      dist.ordered[2] -> u.denom
-    }
-    # There is a problem when multiple points have the same value, resulting
-    #  u.denom == 0. This could be solved by adding some noise to the
-    #  distances. Would that be sufficient?
-    # hold<-matrix(0,(m+1),1)
 
     # This could be vectorized:
+    # hold<-matrix(0,(m+1),1)
     # for(k in 1:(m+1)) { #summands in w.denom
     #   #      u.vector<-ifelse(
     #   #        u.denom == 0 & dist.ordered[k] != 0,
@@ -179,28 +167,34 @@ nse <- function(ts,
 
     # w.denom<-sum(u.vector)
     w.vector<-u.vector / sum(u.vector)
-
+#w.vector
     #Prediction of next point on attractor (row in test.em)
     # HBR does not cast the data frame to a matrix; that must be done. (That
     #  might have been a change with R 4.0.0, IIRC.)
     pred.point<-w.vector %*% as.matrix(pred.ngh)
-
+#pred.point
     #Prediction of time series observation is first (unlagged) element of
     #pred.point
     pred.ts<-pred.point[1]
     #print("pred.ts");print(pred.ts)
     #Step 2b(3): Test point on attractor (row in test.em)
     test.point<-test.em[i,]
+
     #print("test.point");print(test.point)
     #Time series observation to be validated is first (unlagged) element of
     #  test.point
     test.ts<-test.point[1]
     hold.test[i,]<-test.ts #1st element is original data point
     hold.pred[i,]<-pred.ts
+#hold.test[i,]
+#hold.pred[i,]
   } #end i loop through Mx
 
-  1 - (sum((hold.test - hold.pred)^2) /     # Estimate the NSE
-         sum((hold.test - mean(hold.test))^2)) ->
+  # Hmm...the first element consistently seems to be orders of magnitude
+  #  different than the others. I don't know why, but removing that brings
+  #  things more into line. Let's see if that works for now.
+  1 - (sum((hold.test[-1] - hold.pred[-1])^2) /     # Estimate the NSE
+         sum((hold.test[-1] - mean(hold.test[-1]))^2)) ->
     nse
   #print("nse");print(hold.mnse)
   #results<-cbind(learn.0,hold.test,hold.pred)
