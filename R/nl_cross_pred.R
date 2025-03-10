@@ -23,44 +23,6 @@
 #' nl_cross_pred(mayport)
 #'
 
-#
-#
-# FOR TESTING
-#
-#
-ts = lh_df$Hare
-nseg = 3
-m.max = 6
-#
-#
-#
-#
-# Hmm...does this work properly with Mayport data?
-# Not as reported in HBR:
-#
-# Many digamma problems
-# different (and negative) values!
-# ah...problems with missingness.
-read.csv(file = here("Data/Mayport.csv")) ->
-  mp
-mean(mp$Level) ->
-  mp$Level[which(mp$Level < 0)]
-mp$Level -> ts
-5 -> nseg
-6 -> m.max
-
-#
-# Better, but still does not correspond to HBR
-#       [,1]  [,2]  [,3]  [,4]   [,5]
-# [1,] 0.835 0.403 0.335 0.406 0.0876
-# [2,] 0.613 0.902 0.654 0.662 0.2600
-# [3,] 0.427 0.609 0.867 0.535 0.1550
-# [4,] 0.399 0.562 0.488 0.840 0.2550
-# [5,] 0.245 0.296 0.260 0.306 0.7156
-# cv HBR Table 6.3
-# First of all, the diagonals should be equal to 1, right? (Training on
-#  a segment to predict that segment should be perfect.)
-
 nl_cross_pred <- function(ts,               # time series signal
                           nseg = 5,         # number of segments
                           m.max = 6) {      # To allow for limiting the
@@ -115,9 +77,8 @@ ts.keep -> ts
       results.embed$embedded ->
         learn.em.0
 
-      # I don't see any reason to not use const_delay_embed() here, except
-      #  maybe for speed? const_delay_embed(test,m,d)$embedded should create
-      #  test.em just fine, right? This simply renames some columns too
+      # Embed the test data using the same parameters as the learn data. This
+      #  might be done faster by hand.
       tseriesChaos::embedd(test,m,d) ->     # initial embedded test set
         test.em
       rbind(learn.em.0,test.em) -> # Stack for use in prediction loop
