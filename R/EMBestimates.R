@@ -7,6 +7,7 @@
 #' @param TimeM Times of the data (not used of dt is NA)
 #'
 #' @return A matrix of derivatives, in columns
+#'
 #' @export
 #'
 #' @examples
@@ -22,21 +23,23 @@ EMBestimates <- function(DataM,             # Data sequence
   # This function is actually Jon Butner's modification of Pascal Deboeck's
   #  work, cleaned up a bit by BPR for use here.
 
-  #____________________________________________________
-  #Input checks
+  # ==== CHeck inputs ================================================= #
   if((is.na(dt))&(sum(!is.na(TimeM))==0)) {
     return("Error: dt or TimeM must be provided.")
   }
-  if(is.vector(DataM)) { DataM <- matrix(DataM,nrow=1) }
+  if(is.vector(DataM)) {
+    DataM <- matrix(DataM,nrow=1)
+  }
   if(is.na(dt)) {
-    if(is.vector(TimeM)) { TimeM <- matrix(TimeM,nrow=1) }
+    if(is.vector(TimeM)) {
+      TimeM <- matrix(TimeM,nrow=1)
+    }
     if(sum(dim(TimeM)==dim(DataM))!=2) {
       return("Error: DataM and TimeM dimensions do not match.")
     }
   }
 
-  #____________________________________________________
-  #Create Long Data File
+  # ==== Create long data ============================================== #
   LongData <- rep(NA,3+maxorder)
   uIDcreate <- (10^(nchar(dim(DataM)[2])+1))
   for(i in 1:dim(DataM)[1]) {
@@ -64,8 +67,7 @@ EMBestimates <- function(DataM,             # Data sequence
   colnames(LongData) <- c("uniqueid","Y",paste("d",0:maxorder,sep=""))
   LongData <- data.frame(LongData)
 
-  #____________________________________________________
-  #Create, Run and Return lme4 Model
+  # ==== Create, Run and Return lme4 Model============================== #
   Model <- lme4::lmer(formula(
     paste("Y~",
           paste(names(LongData)[3:ncol(LongData)], collapse="+"),
@@ -85,7 +87,8 @@ EMBestimates <- function(DataM,             # Data sequence
   ids <- cbind(ids %/% uIDcreate,
                ids %% uIDcreate)
 
-  return(list(		Model=Model,
-                Derivatives=coef(Model)$uniqueid,
-                nrow=ids[,1],ncol=ids[,2]))
+  return(
+    list(Model=Model,
+         Derivatives=coef(Model)$uniqueid,
+         nrow=ids[,1],ncol=ids[,2]))
 }

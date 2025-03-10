@@ -1,6 +1,7 @@
 #' guastello
 #'
 #' @keywords guastello
+#'
 #' @description This short (20 entries) sequence of the letters "A" through "E"
 #' is taken from Table 21.1 of Guastello's 2011 introduction to orbital
 #' decomposition. It was originally included here to provide test data for

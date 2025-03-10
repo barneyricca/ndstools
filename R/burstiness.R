@@ -1,29 +1,35 @@
 #' burstiness
 #'
-#' @param ts character vector
+#' @param ts character vector (representing consecutive entries in a time-
+#' series)
 #' @param min_iet minimum interevent sequence spacing
+#'
 #' @keywords burstiness
+#'
 #' @description
 #' burstiness() estimates the burstiness coefficient for each of the unique
 #' codes in a time series.
 #'
 #' @export
+#'
 #' @details
 #' burstiness() returns a named vector with an estimated burstiness coefficient
 #' for each unique code in the data sequence, including blank or missing codes.
+#' It is assumed that the data come from a time-series and that each data were
+#' recorded at a constant sampling frequency (or, in the case of event-based
+#' sequences, can be treated as having been recorded at a constant sampling
+#' frequency).
 #'
 #' Standard errors for the resulting burstiness coefficients can be
 #' obtained via boot::tsboot(ts, statistic = burstiness, R = 100, sim =
 #' "fixed", l = length(ts)/2) or the like.
 #'
-#' See time_burstiness() to estimate the burstiness a vector containing the
-#' times at which an event occurs.
-#'
 #' There is a known problem with a non-NULL minimum inter-event time. That
 #' needs to be corrected.
-#' #'
+#'
 #' @author
 #' Barney Ricca barneyricca@gmail.com
+#'
 #' @references
 #' Kim, E.-K., & Jo, H.-H. (2016). Measuring burstiness for finite event
 #' sequences. Physical Review E, 94(3), 032311.
@@ -31,8 +37,7 @@
 #' Ricca, B. P., & Jordan, M. E. (2022). Dynamical systems measures of small
 #' group functioning. International Journal of Complexity in Education, 3(2),
 #' 79–108.
-#' @seealso
-#' time_burstiness
+#'
 #' @examples
 #' burstiness(guastello)
 #' burstiness(engineering)
@@ -40,22 +45,12 @@
 #'
 burstiness <- function(ts,                  # vector of code sequence
                        min_iet = NULL) {    # minimum inter-event time
-  # ==== Description ================================================== #
-  # burstiness() takes a sequence of logical or character entries, and returns
-  #  the Kim & Jo (2016) burstiness for each of the unique entries. It assumes
-  #  that the data are a sequence of equally spaced (in time) measurements.
-  #
-  # This can be used with event-based sequences, subject to the usual caveats
-  #  about doing so. When working with event-based sequences, contextual
-  #  burstiness neds a minimum IET of 2. (I.e., the code must change and
-  #  change back.) For collective burstiness, the minimum IET should be 1
-  #  but that doesn't seem to be the norm yet. (See Ricca & Jordan, 2020.)
 
   # ==== Validate parameters ========================================== #
   if(is.character(ts) == FALSE &            # Validate sequence
      is.logical(ts) == FALSE) {
     cat("Invalid sequence type passed to event_burstiness().\n")
-    cat("Did you mean to use time_burstiness()?\n")
+#    cat("Did you mean to use time_burstiness()?\n")
     return(NULL)
   }
 
@@ -147,6 +142,6 @@ burstiness <- function(ts,                  # vector of code sequence
   }
 
   cat("Invalid data/n")                     # Should never get here
-  cat("Did you mean to use time_burstiness()?/n")
+#  cat("Did you mean to use time_burstiness()?/n")
   return(NULL)
 }

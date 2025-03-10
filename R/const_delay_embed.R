@@ -5,18 +5,19 @@
 #' @param max.delay maximum delay to consider
 #' @param lag.max maximum lag to consider for autocorrelation
 #' @param tol Default tolerance for "closeness" of false nearest neighbors
-#' @keywords delay, embedding, embedding dimension
+#'
+#' @keywords delay, embedding, embedding dimension, shadow state space
+#'
 #' @description
 #' const_delay_embed() determines a constant delay reconstruction state space
 #' and embeds the time series in it.
 #'
 #' @export
 #' @details
-#' const_delay_embed() estimates appropriate values for delay, embedding
-#' dimension, and Theiler window, and then uses a false-nearest neighbors
-#' approach to determine the appropriate embedding of a time series into a
-#' reconstructed state space.
-#'
+#' const_delay_embed() estimates appropriate values for delay (using mutual
+#' information), embedding dimension (using autocorrelation), and Theiler
+#' window, (using a false-nearest neighbors approach) to determine the
+#' appropriate embedding of a time series into a reconstructed state space.
 #'
 #' @author
 #' Barney Ricca barneyricca@gmail.com
@@ -26,19 +27,18 @@ const_delay_embed <- function(x,
                               max.delay = 20,
                               lag.max = 100,
                               tol = 0.15) {
+  # Issue Number 0: Is this correct????
 
   # Issue Number 1:
   # tseriesChaos::mutual() and nonlinearTseries::mutualInformation() give
   #  different AMI estimates for the Hare embedding. This is problematic
   #  because they also give different estimates of the delay. The former
   #  yields a delay of 4, while the latter yields a delay of 3.
+  # Hence, I wrote my own mutual information routine.
   #
   mean(x,
        na.rm = TRUE) ->
     x[is.na(x) == TRUE]
-  # NOTA BENE: HBR neglected to deal with the missing data (marked -99999) in
-  #  the chapter 6 example, so their results are different than what we get
-  #  here!
 
   mi_ksg(x) -> mi
 

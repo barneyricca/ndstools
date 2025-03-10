@@ -28,7 +28,6 @@
 #' @importFrom lme4 lmer
 #' @importFrom magrittr %$%
 #' @importFrom mgcv gam
-#' @importFrom stats rnorm
 #' @importFrom rlang .data
 #' @importFrom segmented segmented
 #' @importFrom stats acf
@@ -46,8 +45,8 @@
 #' @importFrom stats sd
 #' @importFrom tidyr %>%
 #' @importFrom tseriesChaos embedd
-#' @importFrom tseriesChaos mutual
 #' @importFrom tseriesChaos false.nearest
+#' @importFrom tseriesChaos mutual
 ## usethis namespace: end
 NULL
 

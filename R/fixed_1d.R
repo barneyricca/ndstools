@@ -17,8 +17,6 @@
 #'
 #'
 #'
-#'
-#'
 fixed_1d <- function(Level_data,            # Vector of level data
                      Velocity_data,         # Vector of velocity data
                      span = 0.3,            # Default smoothing for loess()

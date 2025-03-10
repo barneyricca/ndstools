@@ -3,12 +3,15 @@
 #' @param ts numeric vector of time series data
 #' @param k number of nearest neighbors to use
 #' @param lag.max Maximum lag to use
+#'
 #' @keywords mutual information
 #' @description
+#'
 #' mi_ksg() uses the approach of Kraskov, Stögbauer, and Grassberger (KSG) to
 #' estimate the mutual information in a time-series.
 #'
 #' @export
+#'
 #' @details
 #' mi_ksg() uses the approach of Kraskov, Stögbauer, and Grassberger (KSG) to
 #' estimate the mutual information in a time-series. It returns a vector of

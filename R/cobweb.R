@@ -2,14 +2,18 @@
 #'
 #' @param x numeric vector of time series data
 #' @param title graph title
-#' @keywords cobweb
+#'
+#' @keywords cobweb plot
+#'
 #' @description
 #' cobweb() creates a cobweb plot of the data.
 #'
 #' @export
+#'
 #' @details
 #' cobweb() creates a cobweb plot of the data. It plots the consecutive points
-#' of the data, connects adjacent points with lines, and draws a diagonal.
+#' of the data, connects adjacent points with lines, and draws a diagonal line
+#' on the graph.
 #'
 #' @author
 #' Barney Ricca barneyricca@gmail.com
@@ -23,8 +27,6 @@
 #'
 cobweb <- function(x,
                    title = NULL) {
-  # ==== Description ================================================== #
-  # cobweb() takes a sequence of numeric entries, and creates a cobweb plot.
 
   # ==== Validate parameters ========================================== #
   if(is.numeric(x) == FALSE) {
@@ -44,6 +46,7 @@ cobweb <- function(x,
     return(NULL)
   }
 
+  # ==== Create plotting sequences ==================================== #
   length(x) - 1 ->
     len
   x[-1] -> xp1
@@ -57,7 +60,8 @@ cobweb <- function(x,
   xp1r[-length(xp1r)] ->
     xp1r
 
-  graphics::par() ->
+  # ==== Plot ========================================================= #
+  graphics::par() ->                        # Save current plot parameters
     par_keep
   graphics::par(pty = 's',
                 mai = c(0.80, 0.05, 0.35, 0.05))
@@ -74,9 +78,7 @@ cobweb <- function(x,
     graphics::lines(xr,xp1r,                # The cobweb
           lwd = 0.4)
   }
-  suppressWarnings(
-    graphics::par(par_keep))
-  #return(NULL)                             # No return message if no
+  suppressWarnings(                         # Restore plot parameters
+    graphics::par(par_keep))                # No return message if no
                                             #  return() command.
-
 }

@@ -1,17 +1,19 @@
 #' engineering
 #'
 #' @keywords engineering design cycle
+#'
 #' @description This character vector contains the sequences of metacognitive
 #' codes corresponding to 421 talk turns from a group of fifth graders working
 #' on an engineering design project; these data are part of the data that were
 #' used in Ricca et al. (2020) and Ricca and Jordan (2022). The codes are based
 #' on the coding scheme of Fiore et al. (2010).
-#' @format  ## `engineering`
-#' A character string with with 421 entries.
+#'
+#' @format A character string with with 421 entries.
 #'
 #' @source <https://github.com/barneyricca/temporal-small-groups>
 #'
 #' @author Barney Ricca barneyricca@gmail.com
+#'
 #' @references Fiore, S. M., Rosen, M. A., Smith-Jentsch, K. A., Salas, E.,
 #' Letsky, M., & Warner, N. (2010). Toward an understanding of macrocognition
 #' in predicting processes in complex collaborative contexts. Human Factors:
