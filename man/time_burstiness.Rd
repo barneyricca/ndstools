@@ -36,17 +36,10 @@ correct standard errors for time_burstiness().)
 There may still be a bug in the non-NULL minimum inter-event times
 parameter.
 }
-\examples{
-time_burstiness()
-
-}
 \references{
 Kim, E.-K., & Jo, H.-H. (2016). Measuring burstiness for finite
 event sequences. Physical Review E, 94(3), 032311.
 https://doi.org/10.1103/PhysRevE.94.032311
-}
-\seealso{
-burstiness()
 }
 \author{
 Barney Ricca barneyricca@gmail.com

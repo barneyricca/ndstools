@@ -20,12 +20,6 @@
 #'
 #' @author
 #' Barney Ricca barneyricca@gmail.com
-#' @references
-#' @seealso
-#' pecora_embed, pca_embed
-#' @examples
-#' const_delay_embed(LynxHare$Hare)
-#' const_delay_embed(LynxHare$Lynx)
 #'
 const_delay_embed <- function(x,
                               m.max = 6,  # Maximum embedding dimension

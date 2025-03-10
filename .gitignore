@@ -11,3 +11,6 @@ src/*.dll
 .quarto
 Check issues
 R/NDSWorkshop-package.R
+src/rcpp_hello.cpp
+src/RcppExports.cpp
+R/gradient_field.R

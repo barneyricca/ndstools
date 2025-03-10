@@ -24,14 +24,6 @@ mutual information estimates at each lag up to lag.max(), starting with
 a lag of zero. (Hence, the lags are one less than the indices of the
 vector.)
 }
-\examples{
-3.99999 -> R
-vector(mode = "numeric", length = 500) -> x
-0.7 -> x[1]
-for(i in 2:500) {R * x[i-1] * (1 - x[i-1]) -> x[i]}
-mi_ksg(x, lag.max = 40)
-
-}
 \references{
 Kraskov, A., Stögbauer, H., & Grassberger, P. (2004).
 }

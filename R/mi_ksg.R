@@ -22,12 +22,6 @@
 #' @references Kraskov, A., Stögbauer, H., & Grassberger, P. (2004).
 #  Estimating mutual information.
 #'
-#' @examples
-#' 3.99999 -> R
-#' vector(mode = "numeric", length = 500) -> x
-#' 0.7 -> x[1]
-#' for(i in 2:500) {R * x[i-1] * (1 - x[i-1]) -> x[i]}
-#' mi_ksg(x, lag.max = 40)
 #'
 mi_ksg <- function(ts,                      # A numeric vector of a timeseries
                    k = 3,                   # Number of nearest neighbors
@@ -64,10 +58,10 @@ mi_ksg <- function(ts,                      # A numeric vector of a timeseries
       # Too many ties creates a big problem. So, add a little noise to
       #  avoid that.
       FNN::mutinfo(ts[1:(length(ts) - index)] +
-                     rnorm(length(ts) - index,
+                     Normal::rnorm(length(ts) - index,
                            0,
                            min(1e-5,
-                               sd(ts, na.rm = TRUE) / 1e3)),
+                               stats::sd(ts, na.rm = TRUE) / 1e3)),
                    ts[(index+1):(length(ts))],
                    k = k) ->
         mi[index + 1]

@@ -15,10 +15,7 @@
 #'
 #' @author
 #' Barney Ricca barneyricca@gmail.com
-#' @references
 #'
-#' @examples
-#' nse(mayport)
 #'
 
 nse <- function(ts,

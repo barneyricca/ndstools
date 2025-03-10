@@ -17,10 +17,6 @@
 #'
 #' @author
 #' Barney Ricca barneyricca@gmail.com
-#' @references
-#' @seealso
-#' @examples
-#' nl_cross_pred(mayport)
 #'
 
 nl_cross_pred <- function(ts,               # time series signal

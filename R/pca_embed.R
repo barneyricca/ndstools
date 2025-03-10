@@ -19,9 +19,6 @@
 #' user to refine the estimation of embedding dimension and embedded data.
 #' @export
 #' @author Barney Ricca <barneyricca@gmail.com>
-#' @examples
-#' pca_embed(Hare)
-#' pca_embed(Lynx)
 #'
 pca_embed <- function(ts,                   # Time series vector
                       dstep = 1,            # Step size for delays

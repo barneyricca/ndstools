@@ -13,8 +13,6 @@
 #' A unified approach to attractor reconstruction. Chaos, 17(1),
 #' 013110-1-013110–013119. https://doi.org/10.1063/1.2430294
 
-#' @examples
-#' max_ortho_embed(Mayport)
 #'
 max_ortho_embed <- function(ts1) {                   # Time series vector
   #

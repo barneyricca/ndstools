@@ -30,9 +30,6 @@
 #' @references Kim, E.-K., & Jo, H.-H. (2016). Measuring burstiness for finite
 #' event sequences. Physical Review E, 94(3), 032311.
 #' https://doi.org/10.1103/PhysRevE.94.032311
-#' @seealso burstiness()
-#' @examples
-#' time_burstiness()
 #'
 time_burstiness <- function (times,
                              min_time = 0,
