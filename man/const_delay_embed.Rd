@@ -7,15 +7,15 @@
 const_delay_embed(x, m.max = 6, max.delay = 20, lag.max = 100, tol = 0.15)
 }
 \arguments{
-\item{<x>}{numeric vector (representing time series)}
+\item{x}{numeric vector (representing time series)}
 
-\item{<m.max>}{maximum embedding dimension to consider}
+\item{m.max}{maximum embedding dimension to consider}
 
-\item{<max.delay>}{maximum delay to consider}
+\item{max.delay}{maximum delay to consider}
 
-\item{<lag.max>}{maximum lag to consider for autocorrelation}
+\item{lag.max}{maximum lag to consider for autocorrelation}
 
-\item{<tol>}{Default tolerance for "closeness" of false nearest neighbors}
+\item{tol}{Default tolerance for "closeness" of false nearest neighbors}
 }
 \description{
 const_delay_embed() determines a constant delay reconstruction state space

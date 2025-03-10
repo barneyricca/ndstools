@@ -14,8 +14,6 @@ vf_plot(df, arrow_size = 0.2, arrow_scale = 1)
 
 \item{arrow_scale}{A scaling factor for the arrow lengths. Larger scales
 produce shorter arrows.}
-
-\item{data_df}{A data frame of the path (x,y) coordinates in temporal order.}
 }
 \value{
 A ggplot2 object with the vector field plot and path. Labels, main

@@ -7,9 +7,9 @@
 burstiness(ts, min_iet = NULL)
 }
 \arguments{
-\item{<ts>}{character vector}
+\item{ts}{character vector}
 
-\item{<min_iet>}{minimum interevent sequence spacing}
+\item{min_iet}{minimum interevent sequence spacing}
 }
 \description{
 burstiness() estimates the burstiness coefficient for each of the unique

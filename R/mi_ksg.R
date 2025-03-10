@@ -1,8 +1,8 @@
 #' mi_ksg
 #'
-#' @param <ts> numeric vector of time series data
-#' @param <k> number of nearest neighbors to use
-#' @param <lag.max> Maximum lag to use
+#' @param ts numeric vector of time series data
+#' @param k number of nearest neighbors to use
+#' @param lag.max Maximum lag to use
 #' @keywords mutual information
 #' @description
 #' mi_ksg() uses the approach of Kraskov, Stögbauer, and Grassberger (KSG) to
@@ -58,7 +58,7 @@ mi_ksg <- function(ts,                      # A numeric vector of a timeseries
       # Too many ties creates a big problem. So, add a little noise to
       #  avoid that.
       FNN::mutinfo(ts[1:(length(ts) - index)] +
-                     Normal::rnorm(length(ts) - index,
+                     stats::rnorm(length(ts) - index,
                            0,
                            min(1e-5,
                                stats::sd(ts, na.rm = TRUE) / 1e3)),

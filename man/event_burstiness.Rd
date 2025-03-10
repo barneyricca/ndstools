@@ -7,9 +7,9 @@
 event_burstiness(ts, min_iet = NULL)
 }
 \arguments{
-\item{<ts>}{character (or logical) vector}
+\item{ts}{character (or logical) vector}
 
-\item{<min_iet>}{minimum interevent sequence spacing}
+\item{min_iet}{minimum interevent sequence spacing}
 }
 \description{
 event_burstiness() estimates the burstiness coefficient for

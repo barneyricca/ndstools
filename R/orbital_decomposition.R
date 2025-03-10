@@ -1,6 +1,6 @@
 #' orbde
 #'
-#' @param <data_seq> character or integer time series
+#' @param data_seq character or integer time series
 #' @keywords orbital decomposition
 #' @description This function returns the result of orbital decomposition.
 #' All of the metrics associated with orbital decomposition are returned in a

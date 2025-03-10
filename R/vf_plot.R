@@ -2,7 +2,6 @@
 #'
 #' @param df A data frame of data to fit. The first four columns must be the
 #'     (x,y) coordinates and the x- and y-directional derivatives, respectively.
-#' @param data_df A data frame of the path (x,y) coordinates in temporal order.
 #' @param arrow_size The base size of the arrow heads, in centimeters.
 #' @param arrow_scale A scaling factor for the arrow lengths. Larger scales
 #'     produce shorter arrows.

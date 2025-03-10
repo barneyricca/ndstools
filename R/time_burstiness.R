@@ -1,9 +1,9 @@
 #' time_burstiness
 #'
-#' @param <times> numeric vector
-#' @param <min_time> the time at which the data sequence begins (assumed to be
+#' @param times numeric vector
+#' @param min_time the time at which the data sequence begins (assumed to be
 #' 0)
-#' @param <min_iet> minimum interevent sequence spacing
+#' @param min_iet minimum interevent sequence spacing
 #' @keywords burstiness
 #' @description time_burstiness() estimates the burstiness coefficient for a
 #' sequence conataining the series of times at which an event occurs.

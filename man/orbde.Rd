@@ -7,7 +7,7 @@
 orbde(data_seq)
 }
 \arguments{
-\item{<data_seq>}{character or integer time series}
+\item{data_seq}{character or integer time series}
 }
 \description{
 This function returns the result of orbital decomposition.

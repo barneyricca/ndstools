@@ -1,8 +1,8 @@
 #' nl_cross_pred
 #'
-#' @param <ts> character vector
-#' @param <nseg> number of segments to cross validate on
-#' @param <m.max> maximum embedding dimension to consider
+#' @param ts character vector
+#' @param nseg number of segments to cross validate on
+#' @param m.max maximum embedding dimension to consider
 #' @keywords nonlinear, cross-prediction
 #' @description
 #' nl_cross_pred() uses the Nash-Sutcliffe efficiency coefficient to test
@@ -22,7 +22,6 @@
 nl_cross_pred <- function(ts,               # time series signal
                           nseg = 5,         # number of segments
                           m.max = 6) {      # To allow for limiting the
-  require(tseriesChaos)
 
   mean(ts, na.rm = TRUE) ->                 # Simple mean imputation of missing
     ts[is.na(ts)]                           #  data. Do this better! (Kalman?)
@@ -49,14 +48,14 @@ nl_cross_pred <- function(ts,               # time series signal
     # Inner loop (i3) iterates over test sets to be predicted by each learning
     #  set. The matrix 'hold.nse' is a column vector storing Nash-Sutcliffe
     #  efficiencies for the predicted test sets (rows) by a given learning set.
-ts -> ts.keep
+#ts -> ts.keep
 
-print(paste0("i2: ", i2, sep = ""))
+#print(paste0("i2: ", i2, sep = ""))
     hold.nse <- matrix(0, nseg, 1)
     for(i3 in 1:nseg) { #loop over test sets
-print(paste0("i3: ", i3, sep = ""))
+#print(paste0("i3: ", i3, sep = ""))
 
-ts.keep -> ts
+#ts.keep -> ts
 
       # seg.matrix[,i2] ->                    # Learning set for forecast
       #   learn
@@ -88,8 +87,8 @@ ts.keep -> ts
       #Step 2b: Nonlinear prediction
       results.np<-nse(Mx)
 
-      nse<-results.np[[1]]
-      hold.nse[i3,]<-nse
+      ns<-results.np[[1]]
+      hold.nse[i3,]<-ns
     } #end i3 loop through test sets
     nse.matrix[,i2]<-hold.nse
     nse.matrix[is.na(nse.matrix)] <- 1 #set any na's along diagonal = 1
@@ -101,7 +100,7 @@ ts.keep -> ts
        xlab="test sets predicted",ylab="nse",ylim=c(0,1),
        font=2,font.lab=2,cex.axis=2,cex.lab=2)
   for(i4 in 2:ncol(nse.matrix)) {
-    lines(nse.matrix[,i4],
+    graphics::lines(nse.matrix[,i4],
           col = i4)
   } #end loop
 

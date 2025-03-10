@@ -1,10 +1,10 @@
 #' nse
 #'
-#' @param <ts> (1-dimensional) numeric vector or (2-dimensional) matrix. If a
+#' @param ts (1-dimensional) numeric vector or (2-dimensional) matrix. If a
 #' vector, then it is assumed ts is a data stream to be embedded in a shadow
 #' state space. If a matrix, it is assumed that ts represents a data stream
 #' embedded in a reconstructed state space.
-#' @param <frac.learn> fraction of data in learning set
+#' @param frac.learn fraction of data in learning set
 #' @keywords Nash Sutcliffe efficiency
 #' @description
 #' nse() estimates the Nash Sutcliffe efficiency for a time series.
@@ -22,7 +22,6 @@ nse <- function(ts,
                 frac.learn = 0.5) { # fraction in learning set
 
   # Alternative: hydroGOF::NSE()? That works without emedding, though.
-  require(fields)
 
   if(mode(as.matrix(ts)) != "numeric") {
     cat("ts must be numeric!\n")
@@ -47,9 +46,9 @@ nse <- function(ts,
   }
 
   # Ties are a problem, so add small random noise to the data
-  Mx + rnorm(n = nrow(Mx) * ncol(Mx),
+  Mx + stats::rnorm(n = nrow(Mx) * ncol(Mx),
              mean = 0,
-             sd = min(sd(Mx, na.rm = TRUE) / 1e3,
+             sd = min(stats::sd(Mx, na.rm = TRUE) / 1e3,
                       1e-3)) ->
     Mx
 
@@ -109,7 +108,7 @@ nse <- function(ts,
     #Indices of m+1 smallest distances from reference point
     # (m=embedding dimension)
     o2<-o1[1:(m+1)]
-    o2<-na.omit(o2)
+    o2<-stats::na.omit(o2)
     dist.ordered<-dist.ref.sc[o2] #ordered distances
 #dist.ordered
     # Alternative

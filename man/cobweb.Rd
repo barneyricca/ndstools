@@ -7,9 +7,9 @@
 cobweb(x, title = NULL)
 }
 \arguments{
-\item{<x>}{numeric vector of time series data}
+\item{x}{numeric vector of time series data}
 
-\item{<r>}{graph title}
+\item{title}{graph title}
 }
 \description{
 cobweb() creates a cobweb plot of the data.

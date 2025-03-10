@@ -1,7 +1,7 @@
 #' burstiness
 #'
-#' @param <ts> character vector
-#' @param <min_iet> minimum interevent sequence spacing
+#' @param ts character vector
+#' @param min_iet minimum interevent sequence spacing
 #' @keywords burstiness
 #' @description
 #' burstiness() estimates the burstiness coefficient for each of the unique

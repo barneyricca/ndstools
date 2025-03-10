@@ -1,7 +1,7 @@
 #' event_burstiness
 #'
-#' @param <ts> character (or logical) vector
-#' @param <min_iet> minimum interevent sequence spacing
+#' @param ts character (or logical) vector
+#' @param min_iet minimum interevent sequence spacing
 #' @keywords burstiness
 #' @description event_burstiness() estimates the burstiness coefficient for
 #' each of the unique codes in a categorical time series. The series is

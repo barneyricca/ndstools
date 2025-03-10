@@ -7,12 +7,12 @@
 time_burstiness(times, min_time = 0, min_iet = NULL)
 }
 \arguments{
-\item{<times>}{numeric vector}
+\item{times}{numeric vector}
 
-\item{<min_time>}{the time at which the data sequence begins (assumed to be
+\item{min_time}{the time at which the data sequence begins (assumed to be
 0)}
 
-\item{<min_iet>}{minimum interevent sequence spacing}
+\item{min_iet}{minimum interevent sequence spacing}
 }
 \description{
 time_burstiness() estimates the burstiness coefficient for a

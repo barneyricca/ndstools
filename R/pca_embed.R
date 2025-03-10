@@ -1,9 +1,9 @@
 #' pca_embed
 #'
-#' @param <ts> numeric vector to embed
-#' @param <dstep> (constant) step size for delays
-#' @param <m.max> maximum embedding dimension to consider
-#' @param <do.plot> boolean value; display the scree plot or not?
+#' @param ts numeric vector to embed
+#' @param dstep (constant) step size for delays
+#' @param m.max maximum embedding dimension to consider
+#' @param do.plot boolean value; display the scree plot or not?
 #' @keywords embedding
 #' @description This function computes the delay state space embedding of a
 #' time series, using principal component analysis.

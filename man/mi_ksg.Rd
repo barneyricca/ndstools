@@ -7,11 +7,11 @@
 mi_ksg(ts, k = 3, lag.max = 100)
 }
 \arguments{
-\item{<ts>}{numeric vector of time series data}
+\item{ts}{numeric vector of time series data}
 
-\item{<k>}{number of nearest neighbors to use}
+\item{k}{number of nearest neighbors to use}
 
-\item{<lag.max>}{Maximum lag to use}
+\item{lag.max}{Maximum lag to use}
 }
 \description{
 mi_ksg() uses the approach of Kraskov, Stögbauer, and Grassberger (KSG) to

@@ -7,13 +7,13 @@
 pca_embed(ts, dstep = 1, m.max = 20, do.plot = TRUE)
 }
 \arguments{
-\item{<ts>}{numeric vector to embed}
+\item{ts}{numeric vector to embed}
 
-\item{<dstep>}{(constant) step size for delays}
+\item{dstep}{(constant) step size for delays}
 
-\item{<m.max>}{maximum embedding dimension to consider}
+\item{m.max}{maximum embedding dimension to consider}
 
-\item{<do.plot>}{boolean value; display the scree plot or not?}
+\item{do.plot}{boolean value; display the scree plot or not?}
 }
 \value{
 The function returns a list with three elements, the estimated

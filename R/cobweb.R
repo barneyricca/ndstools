@@ -1,7 +1,7 @@
 #' cobweb
 #'
-#' @param <x> numeric vector of time series data
-#' @param <r> graph title
+#' @param x numeric vector of time series data
+#' @param title graph title
 #' @keywords cobweb
 #' @description
 #' cobweb() creates a cobweb plot of the data.

@@ -7,12 +7,12 @@
 nse(ts, frac.learn = 0.5)
 }
 \arguments{
-\item{<ts>}{(1-dimensional) numeric vector or (2-dimensional) matrix. If a
+\item{ts}{(1-dimensional) numeric vector or (2-dimensional) matrix. If a
 vector, then it is assumed ts is a data stream to be embedded in a shadow
 state space. If a matrix, it is assumed that ts represents a data stream
 embedded in a reconstructed state space.}
 
-\item{<frac.learn>}{fraction of data in learning set}
+\item{frac.learn}{fraction of data in learning set}
 }
 \description{
 nse() estimates the Nash Sutcliffe efficiency for a time series.

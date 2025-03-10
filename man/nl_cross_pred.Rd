@@ -7,11 +7,11 @@
 nl_cross_pred(ts, nseg = 5, m.max = 6)
 }
 \arguments{
-\item{<ts>}{character vector}
+\item{ts}{character vector}
 
-\item{<nseg>}{number of segments to cross validate on}
+\item{nseg}{number of segments to cross validate on}
 
-\item{<m.max>}{maximum embedding dimension to consider}
+\item{m.max}{maximum embedding dimension to consider}
 }
 \description{
 nl_cross_pred() uses the Nash-Sutcliffe efficiency coefficient to test

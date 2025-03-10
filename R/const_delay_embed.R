@@ -1,10 +1,10 @@
 #' const_delay_embed
 #'
-#' @param <x> numeric vector (representing time series)
-#' @param <m.max> maximum embedding dimension to consider
-#' @param <max.delay> maximum delay to consider
-#' @param <lag.max> maximum lag to consider for autocorrelation
-#' @param <tol> Default tolerance for "closeness" of false nearest neighbors
+#' @param x numeric vector (representing time series)
+#' @param m.max maximum embedding dimension to consider
+#' @param max.delay maximum delay to consider
+#' @param lag.max maximum lag to consider for autocorrelation
+#' @param tol Default tolerance for "closeness" of false nearest neighbors
 #' @keywords delay, embedding, embedding dimension
 #' @description
 #' const_delay_embed() determines a constant delay reconstruction state space
@@ -26,8 +26,6 @@ const_delay_embed <- function(x,
                               max.delay = 20,
                               lag.max = 100,
                               tol = 0.15) {
-  require(tseriesChaos)
-  require(nonlinearTseries)
 
   # Issue Number 1:
   # tseriesChaos::mutual() and nonlinearTseries::mutualInformation() give
@@ -49,7 +47,7 @@ const_delay_embed <- function(x,
   which(diff(diff(mi)>0)>0)[1] ->           # This is the one we want.
     d
 
-  acf.out <- acf(x,
+  acf.out <- stats::acf(x,
                  lag.max,
                  plot = FALSE)$acf
 
