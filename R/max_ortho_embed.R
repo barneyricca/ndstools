@@ -29,8 +29,8 @@
 #' 013110-1-013110–013119. https://doi.org/10.1063/1.2430294
 #'
 max_ortho_embed <- function(ts,                 # Time series vector
-                            max_lag,            #
-                            max_dim,
+                            max_lag = 20,       #
+                            max_dim = 6,        #
                             method = "mutual") { # Not yet used; do not change!
 
   if(is.null(ts) == TRUE) {
@@ -48,6 +48,8 @@ max_ortho_embed <- function(ts,                 # Time series vector
     max_lag
   min(max_dim,                              # Maximum dimension must allow for
       len_ts - max_dim) ->                  #  vector creation
+    max_dim
+  min(max_dim, 6) ->
     max_dim
   vector(mode = "numeric",
          length = max_dim) ->
@@ -112,7 +114,10 @@ max_ortho_embed <- function(ts,                 # Time series vector
           ar2[poss_delay]
       }
     }
-    which.max(ar2[-c(1:delays[2])]) + delays[2] ->
+    # First minimum, from jamie.f.olson. See details at:
+    # https://stackoverflow.com/questions/6836409/finding-local-maxima-and-minima
+    which(diff(diff(ar2[-c(1:delays[2])])>0)>0)[1] + 1 +
+      delays[2] ->      # This is the one we want.
       delays[3]
     ts[-c(1:delays[3])] ->
       ts3
@@ -132,7 +137,8 @@ max_ortho_embed <- function(ts,                 # Time series vector
           ar2[poss_delay]
       }
     }
-    which.max(ar2[-c(1:delays[3])]) + delays[3] ->
+    which(diff(diff(ar2[-c(1:delays[3])])>0)>0)[1] + 1 +
+      delays[3] ->      # This is the one we want.
       delays[4]
     ts[-c(1:delays[4])] ->
       ts4
@@ -154,7 +160,8 @@ max_ortho_embed <- function(ts,                 # Time series vector
           ar2[poss_delay]
       }
     }
-    which.max(ar2[-c(1:delays[4])]) + delays[4] ->
+    which(diff(diff(ar2[-c(1:delays[4])])>0)>0)[1] + 1 +
+      delays[4] ->      # This is the one we want.
       delays[5]
     ts[-c(1:delays[5])] ->
       ts5
@@ -178,7 +185,8 @@ max_ortho_embed <- function(ts,                 # Time series vector
           ar2[poss_delay]
       }
     }
-    which.max(ar2[-c(1:delays[5])]) + delays[5] ->
+    which(diff(diff(ar2[-c(1:delays[5])])>0)>0)[1] + 1 +
+      delays[5] ->      # This is the one we want.
       delays[6]
     ts[-c(1:delays[6])] ->
       ts6
