@@ -55,9 +55,6 @@ mi_ksg <- function(ts,                      # A numeric vector of a timeseries
            length = lag.max + 1) ->
       mi
     for(index in 0:lag.max) {
-      # print(index)
-      # NaN produces for index 0:11, and none after that.
-
       # Too many ties creates a big problem. So, add a little noise to
       #  avoid that.
       FNN::mutinfo(ts[1:(length(ts) - index)] +

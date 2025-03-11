@@ -4,17 +4,30 @@
 \alias{max_ortho_embed}
 \title{max_ortho_embed}
 \usage{
-max_ortho_embed(ts1)
+max_ortho_embed(ts, max_lag, max_dim, method = "mutual")
 }
 \arguments{
-\item{ts1}{character or numeric vector; time series to evaluate}
+\item{ts}{numeric vector of the time series to evaluate}
+
+\item{max_lag}{maximum lag to consider}
+
+\item{max_dim}{maximum dimension to allow}
+
+\item{method}{method choice; not yet implemented so do not use.}
 }
 \description{
 This function computes the delay state space embedding of a
 time series, based on the method proposed by Pecora et al. (2008).
 }
 \details{
-It returns
+max_ortho_embed returns a (possibly non-constant) delay state space
+embedding of ts. It does this by determining the maximally independent
+delay vector at each step. The maximum embedding dimenions for the naive
+approach (the only one implemented so far) is 6. Eventually, this will
+include 3 methods; the mutual information method implemented here, the
+method proposed by Pecora et al., and an approximation of the Pecora method.
+The naive approach (method = "mutual") is a slight extension of the constant
+delay embedding approach.
 }
 \references{
 Pecora, L. M., Moniz, L., Nichols, J., & Carroll, T. L. (2007).
