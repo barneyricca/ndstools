@@ -7,7 +7,8 @@
 burstiness(ts, min_iet = NULL)
 }
 \arguments{
-\item{ts}{character vector}
+\item{ts}{character vector (representing consecutive entries in a time-
+series)}
 
 \item{min_iet}{minimum interevent sequence spacing}
 }
@@ -18,17 +19,17 @@ codes in a time series.
 \details{
 burstiness() returns a named vector with an estimated burstiness coefficient
 for each unique code in the data sequence, including blank or missing codes.
+It is assumed that the data come from a time-series and that each data were
+recorded at a constant sampling frequency (or, in the case of event-based
+sequences, can be treated as having been recorded at a constant sampling
+frequency).
 
 Standard errors for the resulting burstiness coefficients can be
 obtained via boot::tsboot(ts, statistic = burstiness, R = 100, sim =
 "fixed", l = length(ts)/2) or the like.
 
-See time_burstiness() to estimate the burstiness a vector containing the
-times at which an event occurs.
-
 There is a known problem with a non-NULL minimum inter-event time. That
 needs to be corrected.
-#'
 }
 \examples{
 burstiness(guastello)
@@ -43,9 +44,6 @@ https://doi.org/10.1103/PhysRevE.94.032311
 Ricca, B. P., & Jordan, M. E. (2022). Dynamical systems measures of small
 group functioning. International Journal of Complexity in Education, 3(2),
 79–108.
-}
-\seealso{
-time_burstiness
 }
 \author{
 Barney Ricca barneyricca@gmail.com

@@ -22,15 +22,18 @@ const_delay_embed() determines a constant delay reconstruction state space
 and embeds the time series in it.
 }
 \details{
-const_delay_embed() estimates appropriate values for delay, embedding
-dimension, and Theiler window, and then uses a false-nearest neighbors
-approach to determine the appropriate embedding of a time series into a
-reconstructed state space.
+const_delay_embed() estimates appropriate values for delay (using mutual
+information), embedding dimension (using autocorrelation), and Theiler
+window, (using a false-nearest neighbors approach) to determine the
+appropriate embedding of a time series into a reconstructed state space.
 }
 \author{
 Barney Ricca barneyricca@gmail.com
 }
 \keyword{delay,}
-\keyword{dimension}
+\keyword{dimension,}
 \keyword{embedding}
 \keyword{embedding,}
+\keyword{shadow}
+\keyword{space}
+\keyword{state}

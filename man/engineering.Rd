@@ -5,7 +5,6 @@
 \alias{engineering}
 \title{engineering}
 \format{
-## `engineering`
 A character string with with 421 entries.
 }
 \source{

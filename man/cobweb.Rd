@@ -16,7 +16,8 @@ cobweb() creates a cobweb plot of the data.
 }
 \details{
 cobweb() creates a cobweb plot of the data. It plots the consecutive points
-of the data, connects adjacent points with lines, and draws a diagonal.
+of the data, connects adjacent points with lines, and draws a diagonal line
+on the graph.
 }
 \examples{
 3.99999 -> R
@@ -30,3 +31,4 @@ cobweb(x, paste0("R = ",R))
 Barney Ricca barneyricca@gmail.com
 }
 \keyword{cobweb}
+\keyword{plot}
