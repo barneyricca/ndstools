@@ -21,7 +21,8 @@ used in Ricca et al. (2020) and Ricca and Jordan (2022). The codes are based
 on the coding scheme of Fiore et al. (2010).
 }
 \examples{
-event_burstiness(engineering)
+burstiness(engineering)
+
 
 }
 \references{

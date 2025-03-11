@@ -7,7 +7,7 @@
 max_ortho_embed(ts1)
 }
 \arguments{
-\item{ts}{character or numeric vector; time series to evaluate}
+\item{ts1}{character or numeric vector; time series to evaluate}
 }
 \description{
 This function computes the delay state space embedding of a

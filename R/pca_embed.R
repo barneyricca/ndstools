@@ -53,7 +53,7 @@ pca_embed <- function(ts,                   # Time series vector
     full_embed
 
   for(column in 1:ncol(full_embed)) {
-    (column-1) * delay + 1 ->
+    (column-1) * dstep + 1 ->
       start_val
     ts[start_val : (length(ts) + column - ceiling(m.max/dstep))] ->
       full_embed[, column]

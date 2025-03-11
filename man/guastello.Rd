@@ -20,8 +20,8 @@ decomposition. It was originally included here to provide test data for
 the orbde() function.
 }
 \examples{
-event_burstiness(guastello, 1)
-event_burstiness(guastello)
+burstiness(guastello, 1)
+burstiness(guastello)
 
 }
 \references{

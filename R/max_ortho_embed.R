@@ -1,6 +1,6 @@
 #' max_ortho_embed
 #'
-#' @param ts character or numeric vector; time series to evaluate
+#' @param ts1 character or numeric vector; time series to evaluate
 #'
 #' @keywords embedding
 #'

@@ -27,6 +27,7 @@
 #' group functioning. International Journal of Complexity in Education, 3(2),
 #' 79–108.
 #' @examples
-#' event_burstiness(engineering)
+#' burstiness(engineering)
+#'
 #'
 "engineering"
