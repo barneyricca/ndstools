@@ -13,4 +13,13 @@ Check issues
 R/NDSWorkshop-package.R
 src/rcpp_hello.cpp
 src/RcppExports.cpp
+R/event_burstiness.R
 R/gradient_field.R
+R/multilevel_cusp.R
+R/NDSWorkshop-package.R
+R/time_burstiness.R
+In progress/event_burstiness.R
+In progress/gradient_field.R
+In progress/multilevel_cusp.R
+In progress/NDSWorkshop-package.R
+In progress/time_burstiness.R
