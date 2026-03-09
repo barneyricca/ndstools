@@ -75,7 +75,7 @@ cobweb <- function(x,
                        "",
                        title))
     graphics::abline(0,1)                   # The diagonal
-    graphics::lines(xr,xp1r,                # The cobweb
+    graphics::lines(xr[-1],xp1r[-1],        # The cobweb
           lwd = 0.4)
   }
   suppressWarnings(                         # Restore plot parameters

@@ -25,6 +25,7 @@
 #' @importFrom ggplot2 ylab
 #' @importFrom ggplot2 ylim
 #' @importFrom graphics lines
+#' @importFrom igraph fit_power_law
 #' @importFrom lme4 lmer
 #' @importFrom magrittr %$%
 #' @importFrom mgcv gam

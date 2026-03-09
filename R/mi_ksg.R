@@ -47,7 +47,7 @@ mi_ksg <- function(ts,                      # A numeric vector of a timeseries
       lag.max
 
     if(lag.max <= 0) {
-      cat("Invalid lag.max in mi_ksg!\n")
+      cat("Invalid lag.max in mi_ksg. lag.max must be greater than 0!\n")
       return(NULL)
     }
 
