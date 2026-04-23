@@ -21,11 +21,17 @@
 nse <- function(ts,
                 frac.learn = 0.5) { # fraction in learning set
 
-  # Alternative: hydroGOF::NSE()? That works without emedding, though.
+  # Alternative: hydroGOF::NSE()? That works without embedding, though.
 
   if(mode(as.matrix(ts)) != "numeric") {
     cat("ts must be numeric!\n")
     return(NULL)
+  }
+
+  if(frac.learn > 0.5) {
+    cat("frac.learn is too large; setting to maximum value (0.5)\n")
+    0.5 ->
+      frac.learn
   }
 
   # Hmm...if ts is not a vector, then it is already embedded, and we should

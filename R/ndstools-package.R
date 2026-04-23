@@ -4,7 +4,6 @@
 ## usethis namespace: start
 #' @importFrom data.table shift
 #' @importFrom deSolve ode
-#' @importFrom doremi calculate.fda
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
 #' @importFrom energy dcor
