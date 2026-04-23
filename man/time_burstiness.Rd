@@ -21,11 +21,6 @@ the events whose times are given in the data sequence.
 There is a known problem with a non-NULL minimum inter-event time. That
 needs to be corrected.
 }
-\examples{
-time_burstiness(poisson_times)
-time_burstiness(poisson_times, 2)
-
-}
 \references{
 Kim, E.-K., & Jo, H.-H. (2016). Measuring burstiness for finite event
 sequences. Physical Review E, 94(3), 032311.
