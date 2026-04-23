@@ -15,8 +15,8 @@ time_burstiness(ts, min_iet = NULL)
 burstiness() estimates the burstiness coefficient for events.
 }
 \details{
-burstiness() returns a vector with an estimated burstiness coefficient for
-the events whose times are given in the data sequence.
+time_burstiness() returns a vector with an estimated burstiness coefficient
+for the events whose times are given in the data sequence.
 
 There is a known problem with a non-NULL minimum inter-event time. That
 needs to be corrected.

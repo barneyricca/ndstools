@@ -12,17 +12,14 @@ src/*.dll
 Check issues
 src/rcpp_hello.cpp
 src/RcppExports.cpp
-R/event_burstiness.R
 R/gradient_field.R
 R/multilevel_cusp.R
 R/NDSWorkshop-package.R
 sources_from_elsewhere
 
-R/ccm.R
-R/time_burstiness.R
 In_progress/event_burstiness.R
 In_progress/gradient_field.R
 In_progress/multilevel_cusp.R
 In_progress/NDSWorkshop-package.R
 In_progress/time_burstiness.R
-R/SSG.R
+.positai
