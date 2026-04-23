@@ -65,7 +65,7 @@ time_burstiness <- function(ts,              # vector of code sequence
       sd_iet
     sd_iet / mean_iet ->                    # Coefficient of variation
       r
-    length(code_pos_vec) ->                 # Number of interevent times
+    length(ts_vec) ->                       # Number of interevent times
       n
     (r * sqrt(n+1) - sqrt(n-1)) /           # Burstiness (K & J, eq. 22)
       (r * (sqrt(n+1) - 2) + sqrt(n-1)) ->
@@ -87,7 +87,7 @@ time_burstiness <- function(ts,              # vector of code sequence
         sd_iet
       sd_iet / mean_iet ->                  # Coefficient of variation
         r
-      length(code_pos_vec) ->               # Number of interevent times
+      length(ts_vec) ->                     # Number of interevent times
         n
       ((n - 2) * (r * sqrt(n+1) - (1 - n * y_tilde) * sqrt(n-1))) /
         (r * (n * sqrt(n+1) - 2*(n-1)) +
