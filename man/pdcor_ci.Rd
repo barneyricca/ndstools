@@ -20,7 +20,9 @@ A named vector with the partial distance correlation ($mn) of the
 }
 \description{
 This function returns the partial distance correlation of two
-    vectors along with a bootstrapped 95% confidence interval. It does so by
-    removing the linear fit between the vectors before estimating the
+    vectors along with a bootstrapped 95 percent confidence interval. It does
+    so by removing the linear fit between the vectors before estimating the
     distance correlation.
+
+This function, like pdcor, only uses pairwise complete observations.
 }

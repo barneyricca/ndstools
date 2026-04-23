@@ -37,6 +37,6 @@ Imports:
     tidyr,
     tseriesChaos
 LinkingTo: Rcpp
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 URL: https://github.com/barneyricca/ndstools
 BugReports: https://github.com/barneyricca/ndstools/issues

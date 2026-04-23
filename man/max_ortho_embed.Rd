@@ -4,7 +4,7 @@
 \alias{max_ortho_embed}
 \title{max_ortho_embed}
 \usage{
-max_ortho_embed(ts, max_lag, max_dim, method = "mutual")
+max_ortho_embed(ts, max_lag = 20, max_dim = 6, method = "mutual")
 }
 \arguments{
 \item{ts}{numeric vector of the time series to evaluate}
