@@ -19,5 +19,10 @@ Useful links:
 \author{
 \strong{Maintainer}: Barney Ricca \email{barneyricca@gmail.com}
 
+Authors:
+\itemize{
+  \item Barney Ricca \email{barneyricca@gmail.com}
+}
+
 }
 \keyword{internal}
